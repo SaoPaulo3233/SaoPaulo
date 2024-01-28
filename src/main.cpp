@@ -21,11 +21,15 @@ private:
 public:
     // attributes
     sf::RenderWindow window;
+    sf::SoundBuffer music_buffer;
+    sf::Sound music;
     
     // method
     void init() {
         window.create(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "sars");
         window.setFramerateLimit(FRAMERATE_LIMIT);
+        music_buffer.loadFromFile("res/green_greens_kirby_super_star_ost.wav");
+        music.setBuffer(music_buffer);
     }
 
     // method
@@ -57,7 +61,8 @@ public:
     void update() {
         //move();
         //collision_detection();
-        //play_sound();
+        play_sound();
+        
     }
 
     // method
@@ -71,6 +76,17 @@ public:
     void display() {
         window.display();
     }   
+
+    // ################################
+
+    void play_sound() {
+        // soundtrack spielen
+        // fragt ob soundtrack gerade läuft
+        // wenn nicht, spiel ab
+        if(music.getStatus() != sf::Music::Status::Playing) {
+            music.play();
+        }
+    }
 };
 
 

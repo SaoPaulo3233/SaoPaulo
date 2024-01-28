@@ -2,20 +2,17 @@
 #include <SFML/Audio.hpp>
 #include <SFML/System.hpp>
 
-class Background {
+class Apfelbaum {
 private:
     sf::Texture texture;
     sf::Sprite sprite;
 
 public:
-    Background() {
-        // background
-        texture.loadFromFile("res/ground.png");
-        texture.setRepeated(true);
+    Apfelbaum() {
+        texture.loadFromFile("res/apfelbaum.png");
         sprite.setTexture(texture);
-        sprite.setTextureRect(sf::IntRect(0, 0, 1080, 720));
-        sprite.setScale(20.0f, 20.0f);
-
+        sprite.setScale(0.2f, 0.2f);
+        sprite.setPosition(128.f, 16.f);
     }
 
     sf::Sprite& getSprite() {

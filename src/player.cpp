@@ -9,9 +9,10 @@ private:
 
 public:
     Player() {
-        texture.loadFromFile("res/player.png");
+        texture.loadFromFile("res/Spitzzahn_Hund.png");
         sprite.setTexture(texture);
-        sprite.setScale(3.0f, 3.0f);
+        sprite.setScale(0.2f,0.2f);
+        //sprite.setScale(3.0f, 3.0f);
         sprite.setPosition(100, 100);
     }
 

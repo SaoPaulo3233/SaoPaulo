@@ -2,20 +2,16 @@
 #include <SFML/Audio.hpp>
 #include <SFML/System.hpp>
 
-class Background {
+class House {
 private:
     sf::Texture texture;
     sf::Sprite sprite;
 
 public:
-    Background() {
-        // background
-        texture.loadFromFile("res/ground.png");
-        texture.setRepeated(true);
+    House() {
+        texture.loadFromFile("res/Haus.png");
         sprite.setTexture(texture);
-        sprite.setTextureRect(sf::IntRect(0, 0, 1080, 720));
-        sprite.setScale(20.0f, 20.0f);
-
+        sprite.setScale(0.2f, 0.2f);
     }
 
     sf::Sprite& getSprite() {

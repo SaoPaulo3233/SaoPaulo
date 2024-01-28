@@ -6,9 +6,11 @@
 
 #include "player.cpp"
 #include "background.cpp"
+#include "house.cpp"
+#include "apfelbaum.cpp"
 
 // constants
-const int WINDOW_WIDTH = 1024;
+const int WINDOW_WIDTH = 512;
 const int WINDOW_HEIGHT = 512;
 const int FRAMERATE_LIMIT = 32;
 
@@ -17,6 +19,8 @@ class SaoPaulo3233 {
 private:
     Player player;
     Background background;
+    House house;
+    Apfelbaum apfelbaum;
 
 public:
     // attributes
@@ -30,23 +34,25 @@ public:
         window.setFramerateLimit(FRAMERATE_LIMIT);
         music_buffer.loadFromFile("res/green_greens_kirby_super_star_ost.wav");
         music.setBuffer(music_buffer);
+        float player_speed = 8.0f;
+
     }
 
     // method
     void input() {
-        float speed = 16.0f;
+        float player_speed = 8.0f;
 
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-            player.move(0, -speed);
+            player.move(0, -player_speed);
         }
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-            player.move(0, speed);
+            player.move(0, player_speed);
         }
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-            player.move(-speed, 0);
+            player.move(-player_speed, 0);
         }
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-            player.move(speed, 0);
+            player.move(player_speed, 0);
         }
 
         // close window?
@@ -68,8 +74,12 @@ public:
     // method
     void draw() {
         window.clear(sf::Color::Black);
+
         window.draw(background.getSprite());
+        window.draw(house.getSprite());
         window.draw(player.getSprite());
+        window.draw(apfelbaum.getSprite());
+
     }
 
     // method

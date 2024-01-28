@@ -9,7 +9,7 @@ private:
 
 public:
     House() {
-        texture.loadFromFile("res/Haus.png");
+        texture.loadFromFile("res/textures/Haus.png");
         sprite.setTexture(texture);
         sprite.setScale(0.2f, 0.2f);
     }

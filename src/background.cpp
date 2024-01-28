@@ -10,7 +10,7 @@ private:
 public:
     Background() {
         // background
-        texture.loadFromFile("res/ground.png");
+        texture.loadFromFile("res/textures/ground.png");
         texture.setRepeated(true);
         sprite.setTexture(texture);
         sprite.setTextureRect(sf::IntRect(0, 0, 1080, 720));

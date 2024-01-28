@@ -9,7 +9,7 @@ private:
 
 public:
     Apfelbaum() {
-        texture.loadFromFile("res/apfelbaum.png");
+        texture.loadFromFile("res/textures/apfelbaum.png");
         sprite.setTexture(texture);
         sprite.setScale(0.2f, 0.2f);
         sprite.setPosition(128.f, 16.f);

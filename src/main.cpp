@@ -32,7 +32,7 @@ public:
     void init() {
         window.create(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "sars");
         window.setFramerateLimit(FRAMERATE_LIMIT);
-        music_buffer.loadFromFile("res/green_greens_kirby_super_star_ost.wav");
+        music_buffer.loadFromFile("res/music/green_greens_kirby_super_star_ost.wav");
         music.setBuffer(music_buffer);
         float player_speed = 8.0f;
 
